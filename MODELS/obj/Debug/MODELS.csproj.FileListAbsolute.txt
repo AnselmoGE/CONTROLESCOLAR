@@ -1,0 +1,5 @@
+C:\Users\Eurouser\OneDrive - Europartners\Documents\Anselmo PROYECTOS\RESIDENCIA\MODELS\bin\Debug\MODELS.dll
+C:\Users\Eurouser\OneDrive - Europartners\Documents\Anselmo PROYECTOS\RESIDENCIA\MODELS\bin\Debug\MODELS.pdb
+C:\Users\Eurouser\OneDrive - Europartners\Documents\Anselmo PROYECTOS\RESIDENCIA\MODELS\obj\Debug\MODELS.csproj.CoreCompileInputs.cache
+C:\Users\Eurouser\OneDrive - Europartners\Documents\Anselmo PROYECTOS\RESIDENCIA\MODELS\obj\Debug\MODELS.dll
+C:\Users\Eurouser\OneDrive - Europartners\Documents\Anselmo PROYECTOS\RESIDENCIA\MODELS\obj\Debug\MODELS.pdb

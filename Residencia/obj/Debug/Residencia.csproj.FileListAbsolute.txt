@@ -1,0 +1,40 @@
+C:\Users\Lizuly\Desktop\Residencia\Residencia\bin\Debug\Residencia.exe.config
+C:\Users\Lizuly\Desktop\RESIDENCIA\Residencia\bin\Debug\Residencia.exe
+C:\Users\Lizuly\Desktop\RESIDENCIA\Residencia\bin\Debug\Residencia.pdb
+C:\Users\Lizuly\Desktop\RESIDENCIA\Residencia\obj\Debug\Residencia.csprojResolveAssemblyReference.cache
+C:\Users\Lizuly\Desktop\RESIDENCIA\Residencia\obj\Debug\Residencia.Docente.resources
+C:\Users\Lizuly\Desktop\RESIDENCIA\Residencia\obj\Debug\Residencia.Carreras.resources
+C:\Users\Lizuly\Desktop\RESIDENCIA\Residencia\obj\Debug\Residencia.Materias.resources
+C:\Users\Lizuly\Desktop\RESIDENCIA\Residencia\obj\Debug\Residencia.Properties.Resources.resources
+C:\Users\Lizuly\Desktop\RESIDENCIA\Residencia\obj\Debug\Residencia.csproj.GenerateResource.Cache
+C:\Users\Lizuly\Desktop\RESIDENCIA\Residencia\obj\Debug\Residencia.exe
+C:\Users\Lizuly\Desktop\RESIDENCIA\Residencia\obj\Debug\Residencia.pdb
+C:\Users\Lizuly\Desktop\RESIDENCIA\Residencia\obj\Debug\Residencia.Grupos.resources
+C:\Users\Lizuly\Desktop\RESIDENCIA\Residencia\obj\Debug\Residencia.Login.resources
+C:\Users\Lizuly\Desktop\RESIDENCIA\Residencia\obj\Debug\Residencia.Menu.resources
+C:\Users\Lizuly\Desktop\RESIDENCIA\Residencia\obj\Debug\Residencia.Form1.resources
+C:\Users\Lizuly\Desktop\RESIDENCIA\Residencia\obj\Debug\Residencia.Generar_Cargas.resources
+C:\Users\Eurouser\OneDrive - Europartners\Documents\RESIDENCIA\RESIDENCIA\Residencia\bin\Debug\Residencia.exe.config
+C:\Users\Eurouser\OneDrive - Europartners\Documents\RESIDENCIA\RESIDENCIA\Residencia\bin\Debug\Residencia.exe
+C:\Users\Eurouser\OneDrive - Europartners\Documents\RESIDENCIA\RESIDENCIA\Residencia\bin\Debug\Residencia.pdb
+C:\Users\Eurouser\OneDrive - Europartners\Documents\RESIDENCIA\RESIDENCIA\Residencia\obj\Debug\Residencia.csprojAssemblyReference.cache
+C:\Users\Eurouser\OneDrive - Europartners\Documents\RESIDENCIA\RESIDENCIA\Residencia\obj\Debug\Residencia.Docente.resources
+C:\Users\Eurouser\OneDrive - Europartners\Documents\RESIDENCIA\RESIDENCIA\Residencia\obj\Debug\Residencia.Carreras.resources
+C:\Users\Eurouser\OneDrive - Europartners\Documents\RESIDENCIA\RESIDENCIA\Residencia\obj\Debug\Residencia.Form1.resources
+C:\Users\Eurouser\OneDrive - Europartners\Documents\RESIDENCIA\RESIDENCIA\Residencia\obj\Debug\Residencia.Generar_Cargas.resources
+C:\Users\Eurouser\OneDrive - Europartners\Documents\RESIDENCIA\RESIDENCIA\Residencia\obj\Debug\Residencia.Grupos.resources
+C:\Users\Eurouser\OneDrive - Europartners\Documents\RESIDENCIA\RESIDENCIA\Residencia\obj\Debug\Residencia.Login.resources
+C:\Users\Eurouser\OneDrive - Europartners\Documents\RESIDENCIA\RESIDENCIA\Residencia\obj\Debug\Residencia.Materias.resources
+C:\Users\Eurouser\OneDrive - Europartners\Documents\RESIDENCIA\RESIDENCIA\Residencia\obj\Debug\Residencia.Menu.resources
+C:\Users\Eurouser\OneDrive - Europartners\Documents\RESIDENCIA\RESIDENCIA\Residencia\obj\Debug\Residencia.Properties.Resources.resources
+C:\Users\Eurouser\OneDrive - Europartners\Documents\RESIDENCIA\RESIDENCIA\Residencia\obj\Debug\Residencia.csproj.GenerateResource.cache
+C:\Users\Eurouser\OneDrive - Europartners\Documents\RESIDENCIA\RESIDENCIA\Residencia\obj\Debug\Residencia.csproj.CoreCompileInputs.cache
+C:\Users\Eurouser\OneDrive - Europartners\Documents\RESIDENCIA\RESIDENCIA\Residencia\obj\Debug\Residencia.exe
+C:\Users\Eurouser\OneDrive - Europartners\Documents\RESIDENCIA\RESIDENCIA\Residencia\obj\Debug\Residencia.pdb
+C:\Users\Eurouser\OneDrive - Europartners\Documents\RESIDENCIA\RESIDENCIA\Residencia\bin\Debug\BLL.dll
+C:\Users\Eurouser\OneDrive - Europartners\Documents\RESIDENCIA\RESIDENCIA\Residencia\bin\Debug\MODELS.dll
+C:\Users\Eurouser\OneDrive - Europartners\Documents\RESIDENCIA\RESIDENCIA\Residencia\bin\Debug\DAO.dll
+C:\Users\Eurouser\OneDrive - Europartners\Documents\RESIDENCIA\RESIDENCIA\Residencia\bin\Debug\BLL.pdb
+C:\Users\Eurouser\OneDrive - Europartners\Documents\RESIDENCIA\RESIDENCIA\Residencia\bin\Debug\MODELS.pdb
+C:\Users\Eurouser\OneDrive - Europartners\Documents\RESIDENCIA\RESIDENCIA\Residencia\bin\Debug\DAO.pdb
+C:\Users\Eurouser\OneDrive - Europartners\Documents\RESIDENCIA\RESIDENCIA\Residencia\obj\Debug\Residencia.csproj.CopyComplete

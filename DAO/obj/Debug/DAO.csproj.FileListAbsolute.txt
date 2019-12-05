@@ -1,0 +1,5 @@
+C:\Users\Eurouser\OneDrive - Europartners\Documents\Anselmo PROYECTOS\RESIDENCIA\DAO\bin\Debug\DAO.dll
+C:\Users\Eurouser\OneDrive - Europartners\Documents\Anselmo PROYECTOS\RESIDENCIA\DAO\bin\Debug\DAO.pdb
+C:\Users\Eurouser\OneDrive - Europartners\Documents\Anselmo PROYECTOS\RESIDENCIA\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+C:\Users\Eurouser\OneDrive - Europartners\Documents\Anselmo PROYECTOS\RESIDENCIA\DAO\obj\Debug\DAO.dll
+C:\Users\Eurouser\OneDrive - Europartners\Documents\Anselmo PROYECTOS\RESIDENCIA\DAO\obj\Debug\DAO.pdb
