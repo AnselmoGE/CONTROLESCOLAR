@@ -16,12 +16,5 @@ namespace Residencia
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Menu f = new Menu();
-            f.Show();
-            Visible = false;
-        }
     }
 }

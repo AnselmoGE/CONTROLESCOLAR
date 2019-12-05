@@ -16,21 +16,16 @@ namespace Residencia
     {
         bool esNuevo;
         bool esEditar;
-
+        CarrerasBLL carreraBLL;
         public Carrera()
         {
             InitializeComponent();
             esNuevo = false;
             esEditar = false;
+            carreraBLL = new CarrerasBLL(Extensions.GetConnectionStringBD());
             recargaGRID();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Menu f = new Menu();
-            f.Show();
-            Visible = false;
-        }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -56,7 +51,6 @@ namespace Residencia
         {
             try
             {
-                CarrerasBLL carreraBLL = new CarrerasBLL(Extensions.GetConnectionStringBD());
 
                 if (esNuevo)
                 {
@@ -76,8 +70,10 @@ namespace Residencia
                     currentCarrera.Abreviatura = txtAbreviatura.Text;
 
                     BaseResponse<int> usuarios = carreraBLL.InsertCarrera(currentCarrera);
+                    esNuevo = false;
                     HabilitaDesHabilitaLimpia(false);
                     recargaGRID();
+
                 }
                 else if (esEditar)
                 {
@@ -102,22 +98,62 @@ namespace Residencia
                     currentCarrera.Nombre = txtCarrera.Text;
                     currentCarrera.Abreviatura = txtAbreviatura.Text;
 
-                    Usuarios usuario = new Usuarios();
-                    usuario.IdUsuario = Convert.ToInt32(txtID.Text);
-                    usuario.Usario = txtCarrera.Text;
-                    usuario.Password = txtAbreviatura.Text;
-
                     BaseResponse<int> usuarios = carreraBLL.UpdateCarrera(currentCarrera);
+                    esEditar = false;
                     HabilitaDesHabilitaLimpia(false);
                     recargaGRID();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + " TRACE : " + ex.StackTrace);
             }
-            
 
+
+        }
+
+        private void tabla_carreras_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try { 
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.tabla_carreras.Rows[e.RowIndex];
+                txtID.Text = row.Cells["IdCarrera"].Value.ToString();
+                txtCarrera.Text = row.Cells["Nombre"].Value.ToString();
+                txtAbreviatura.Text = row.Cells["Abreviatura"].Value.ToString();
+
+            }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " TRACE : " + ex.StackTrace);
+            }
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txtID.Text))
+                {
+                    MessageBox.Show("Seleccione un registro");
+                }
+                else
+                {
+                    esEditar = false;
+                    esNuevo = false;
+
+                    int IdCarrera = Convert.ToInt32(txtID.Text);
+
+                    BaseResponse<int> carreras = carreraBLL.DeleteCarrera(IdCarrera);
+                    HabilitaDesHabilitaLimpia(false);
+                    recargaGRID();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " TRACE : " + ex.StackTrace);
+            }
         }
 
         //FUNCIONES
@@ -133,7 +169,7 @@ namespace Residencia
                 txtCarrera.Enabled = accion;
                 txtAbreviatura.Enabled = accion;
             }
-            else if(esEditar)
+            else if (esEditar)
             {
                 if (string.IsNullOrWhiteSpace(txtID.Text))
                 {
@@ -145,27 +181,26 @@ namespace Residencia
                     txtAbreviatura.Enabled = accion;
                 }
             }
+            else
+            {
+                txtCarrera.Text = "";
+                txtAbreviatura.Text = "";
+                txtID.Text = "";
+                txtCarrera.Enabled = accion;
+                txtAbreviatura.Enabled = accion;
+            }
 
         }
 
         private void recargaGRID()
         {
-            CarrerasBLL carreraBLL = new CarrerasBLL(Extensions.GetConnectionStringBD());
-
+            try { 
             BaseResponse<List<Carreras>> carreras = carreraBLL.GetCarrera();
-
             tabla_carreras.DataSource = carreras.Results;
-        }
-
-        private void tabla_carreras_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
+            }
+            catch (Exception ex)
             {
-                DataGridViewRow row = this.tabla_carreras.Rows[e.RowIndex];
-                txtID.Text = row.Cells["IdCarrera"].Value.ToString();
-                txtCarrera.Text = row.Cells["Nombre"].Value.ToString();
-                txtAbreviatura.Text = row.Cells["Abreviatura"].Value.ToString();
-
+                MessageBox.Show(ex.Message + " TRACE : " + ex.StackTrace);
             }
         }
     }

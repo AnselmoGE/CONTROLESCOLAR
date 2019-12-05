@@ -47,7 +47,6 @@ C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Resid
 C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Residencia\obj\Debug\Residencia.Grupos.resources
 C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Residencia\obj\Debug\Residencia.Login.resources
 C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Residencia\obj\Debug\Residencia.Materias.resources
-C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Residencia\obj\Debug\Residencia.Menu.resources
 C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Residencia\obj\Debug\Residencia.Principal.resources
 C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Residencia\obj\Debug\Residencia.Properties.Resources.resources
 C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Residencia\obj\Debug\Residencia.csproj.GenerateResource.cache

@@ -45,6 +45,7 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.carrerasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabla_carreras)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -74,6 +75,7 @@
             // 
             this.txtCarrera.Enabled = false;
             this.txtCarrera.Location = new System.Drawing.Point(176, 79);
+            this.txtCarrera.MaxLength = 100;
             this.txtCarrera.Name = "txtCarrera";
             this.txtCarrera.Size = new System.Drawing.Size(186, 20);
             this.txtCarrera.TabIndex = 3;
@@ -83,6 +85,7 @@
             this.txtAbreviatura.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.carrerasBindingSource, "Abreviatura", true));
             this.txtAbreviatura.Enabled = false;
             this.txtAbreviatura.Location = new System.Drawing.Point(176, 111);
+            this.txtAbreviatura.MaxLength = 10;
             this.txtAbreviatura.Name = "txtAbreviatura";
             this.txtAbreviatura.Size = new System.Drawing.Size(186, 20);
             this.txtAbreviatura.TabIndex = 4;
@@ -117,6 +120,7 @@
             // 
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoToolStripMenuItem,
+            this.eliminarToolStripMenuItem,
             this.editarToolStripMenuItem,
             this.toolStripSeparator1,
             this.guardarToolStripMenuItem,
@@ -186,6 +190,14 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "No. Carrera:";
             // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
+            // 
             // Carrera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,5 +241,6 @@
         private System.Windows.Forms.BindingSource carrerasBindingSource;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
     }
 }

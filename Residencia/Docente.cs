@@ -14,30 +14,196 @@ namespace Residencia
 {
     public partial class Docente : Form
     {
+        bool esNuevo;
+        bool esEditar;
+        DocentesBLL docenteBLL;
+
         public Docente()
         {
             InitializeComponent();
+            esNuevo = false;
+            esEditar = false; 
+            docenteBLL = new DocentesBLL(Extensions.GetConnectionStringBD());
+            recargaGRID();
         }
 
-        private void Docente_Load(object sender, EventArgs e)
+
+        private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            esNuevo = true;
+            esEditar = false;
+            HabilitaDesHabilitaLimpia(true);
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            esNuevo = false;
+            esEditar = true;
+            HabilitaDesHabilitaLimpia(true);
+        }
+
+        private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (esNuevo)
+                {
+                    if (string.IsNullOrWhiteSpace(txtDocente.Text))
+                    {
+                        txtDocente.Focus();
+                        return;
+                    }
+                    if (string.IsNullOrWhiteSpace(txtTelefono.Text))
+                    {
+                        txtTelefono.Focus();
+                        return;
+                    }
+
+                    Docentes currentDocente = new Docentes();
+                    currentDocente.Nombre = txtDocente.Text;
+                    currentDocente.telefono = txtTelefono.Text;
+
+                    BaseResponse<int> usuarios = docenteBLL.InsertDocente(currentDocente);
+                    esNuevo = false;
+                    HabilitaDesHabilitaLimpia(false);
+                    recargaGRID();
+
+                }
+                else if (esEditar)
+                {
+                    if (string.IsNullOrWhiteSpace(txtID.Text))
+                    {
+                        txtID.Focus();
+                        return;
+                    }
+                    if (string.IsNullOrWhiteSpace(txtDocente.Text))
+                    {
+                        txtDocente.Focus();
+                        return;
+                    }
+                    if (string.IsNullOrWhiteSpace(txtTelefono.Text))
+                    {
+                        txtTelefono.Focus();
+                        return;
+                    }
+
+
+                    Docentes currentDocente = new Docentes();
+                    currentDocente.IdDocente = Convert.ToInt32(txtID.Text);
+                    currentDocente.Nombre = txtDocente.Text;
+                    currentDocente.telefono = txtTelefono.Text;
+
+                    BaseResponse<int> usuarios = docenteBLL.UpdateDocente(currentDocente);
+                    esEditar = false;
+                    HabilitaDesHabilitaLimpia(false);
+                    recargaGRID();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " TRACE : " + ex.StackTrace);
+            }
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txtID.Text))
+                {
+                    MessageBox.Show("Seleccione un registro");
+                }
+                else
+                {
+                    esEditar = false;
+                    esNuevo = false;
+
+                    int IdCarrera = Convert.ToInt32(txtID.Text);
+
+                    BaseResponse<int> carreras = docenteBLL.DeleteDocente(IdCarrera);
+                    HabilitaDesHabilitaLimpia(false);
+                    recargaGRID();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " TRACE : " + ex.StackTrace);
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        
+        private void tabla_docente_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Menu f = new Menu();
-            f.Show();
-            Visible = false;
+            try { 
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.tabla_docente.Rows[e.RowIndex];
+                txtID.Text = row.Cells["IdDocente"].Value.ToString();
+                txtDocente.Text = row.Cells["Nombre"].Value.ToString();
+                txtTelefono.Text = row.Cells["telefono"].Value.ToString();
+
+            }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " TRACE : " + ex.StackTrace);
+            }
         }
 
-        private void btn_Guardar_Click(object sender, EventArgs e)
+        //FUNCIONES
+
+        public void HabilitaDesHabilitaLimpia(bool accion)
         {
-            UsuariosBLL usuario = new UsuariosBLL(Extensions.GetConnectionStringBD());
 
-            BaseResponse<List<Usuarios>> usuarios = usuario.GetUsuario();
+            if (esNuevo)
+            {
+                txtDocente.Text = "";
+                txtTelefono.Text = "";
+                txtID.Text = "";
+                txtDocente.Enabled = accion;
+                txtTelefono.Enabled = accion;
+            }
+            else if (esEditar)
+            {
+                if (string.IsNullOrWhiteSpace(txtID.Text))
+                {
+                    MessageBox.Show("Seleccione un registro");
+                }
+                else
+                {
+                    txtDocente.Enabled = accion;
+                    txtTelefono.Enabled = accion;
+                }
+            }
+            else
+            {
+                txtDocente.Text = "";
+                txtTelefono.Text = "";
+                txtID.Text = "";
+                txtDocente.Enabled = accion;
+                txtTelefono.Enabled = accion;
+            }
 
-            tabla_docente.DataSource = usuarios.Results;
         }
+
+        private void recargaGRID()
+        {
+            try { 
+            BaseResponse<List<Docentes>> docentes = docenteBLL.GetDocente();
+            tabla_docente.DataSource = docentes.Results;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " TRACE : " + ex.StackTrace);
+            }
+        }
+
     }
 }
