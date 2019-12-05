@@ -22,13 +22,13 @@ namespace BLL
             get { return _UsuariosDAL.Dao; }
         }
 
-        public BaseResponse<Usuarios> GetStatus(int idStatus)
+        public BaseResponse<Usuarios> GetUsuario(int IdUsuario)
         {
             var response = new BaseResponse<Usuarios>();
 
             try
             {
-                response.Results = _UsuariosDAL.GetUsuarios(idStatus);
+                response.Results = _UsuariosDAL.GetUsuarios(IdUsuario);
 
                 if (response.Results != null)
                     response.CodeError = 0;
@@ -45,7 +45,32 @@ namespace BLL
             return response;
         }
 
-        public BaseResponse<List<Usuarios>> GetStatus()
+        public BaseResponse<bool> GetUsuarioLOG(string usuario, string password)
+        {
+            var response = new BaseResponse<bool>();
+
+            try
+            {
+                Usuarios usuarioResult = _UsuariosDAL.GetUsuarios(usuario, password);
+
+                response.Results = usuarioResult.IdUsuario>0 ? true : false;
+
+                if (response.Results )
+                    response.CodeError = 0;
+                else
+                {
+                    response.SetErrorCode(7);
+                }
+            }
+            catch
+            {
+                throw;
+            }
+
+            return response;
+        }
+
+        public BaseResponse<List<Usuarios>> GetUsuario()
         {
             var response = new BaseResponse<List<Usuarios>>();
 
@@ -68,7 +93,7 @@ namespace BLL
             return response;
         }
 
-        public BaseResponse<int> UpdateStatus(Usuarios usuario)
+        public BaseResponse<int> UpdateUsuario(Usuarios usuario)
         {
             var response = new BaseResponse<int>();
 
@@ -110,7 +135,7 @@ namespace BLL
 
         }
 
-        public BaseResponse<int> InsertStatus(Usuarios usuario)
+        public BaseResponse<int> InsertUsuario(Usuarios usuario)
         {
             var response = new BaseResponse<int>();
             bool desconecta = false;
@@ -151,7 +176,7 @@ namespace BLL
             return response;
         }
 
-        public BaseResponse<int> DeleteStatus(int usuarioID)
+        public BaseResponse<int> DeleteUsuario(int usuarioID)
         {
             var response = new BaseResponse<int>();
 

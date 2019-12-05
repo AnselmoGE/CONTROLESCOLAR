@@ -1,6 +1,6 @@
 ﻿namespace Residencia
 {
-    partial class Form1
+    partial class Alumnos
     {
         /// <summary>
         /// Required designer variable.

@@ -35,7 +35,7 @@ namespace Residencia
         {
             UsuariosBLL usuario = new UsuariosBLL(Extensions.GetConnectionStringBD());
 
-            BaseResponse<List<Usuarios>> usuarios = usuario.GetStatus();
+            BaseResponse<List<Usuarios>> usuarios = usuario.GetUsuario();
 
             tabla_docente.DataSource = usuarios.Results;
         }

@@ -3,3 +3,8 @@ C:\Users\Eurouser\OneDrive - Europartners\Documents\Anselmo PROYECTOS\RESIDENCIA
 C:\Users\Eurouser\OneDrive - Europartners\Documents\Anselmo PROYECTOS\RESIDENCIA\MODELS\obj\Debug\MODELS.csproj.CoreCompileInputs.cache
 C:\Users\Eurouser\OneDrive - Europartners\Documents\Anselmo PROYECTOS\RESIDENCIA\MODELS\obj\Debug\MODELS.dll
 C:\Users\Eurouser\OneDrive - Europartners\Documents\Anselmo PROYECTOS\RESIDENCIA\MODELS\obj\Debug\MODELS.pdb
+C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\MODELS\bin\Debug\MODELS.dll
+C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\MODELS\bin\Debug\MODELS.pdb
+C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\MODELS\obj\Debug\MODELS.csproj.CoreCompileInputs.cache
+C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\MODELS\obj\Debug\MODELS.dll
+C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\MODELS\obj\Debug\MODELS.pdb

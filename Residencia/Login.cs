@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
+using MODELS;
 
 namespace Residencia
 {
@@ -19,9 +21,21 @@ namespace Residencia
 
         private void btn_aceptar_Click(object sender, EventArgs e)
         {
-            if (txb_contra.Text == "1234")
+            if (string.IsNullOrWhiteSpace(txb_usuario.Text))
+                txb_usuario.Focus();
+
+            if (string.IsNullOrWhiteSpace(txb_contra.Text))
+                txb_contra.Focus();
+
+            string usuario = txb_usuario.Text;
+            string password = txb_contra.Text;
+
+            UsuariosBLL usuarioBLL = new UsuariosBLL(Extensions.GetConnectionStringBD());
+            BaseResponse<bool> respuesta = usuarioBLL.GetUsuarioLOG(usuario, password);
+
+            if (respuesta.Results)
             {
-                Menu f = new Menu();
+                Principal f = new Principal();
                 f.Show();
                 Visible = false;
                 txb_contra.Clear();

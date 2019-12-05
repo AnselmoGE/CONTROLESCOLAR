@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Residencia
 {
-    public partial class Form1 : Form
+    public partial class Alumnos : Form
     {
-        public Form1()
+        public Alumnos()
         {
             InitializeComponent();
         }

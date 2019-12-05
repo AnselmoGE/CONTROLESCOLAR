@@ -47,6 +47,27 @@ namespace DAL
             return Usuarios;
         }
 
+        internal Usuarios GetUsuarios(string Usuario, string password)
+        {
+            Usuarios Usuarios = new Usuarios();
+
+            SqlCommand sqlCommand = new SqlCommand();
+            SqlParameterCollection parametros = sqlCommand.Parameters;
+            parametros.Add("@Usuario", SqlDbType.VarChar).Value = Usuario;
+            parametros.Add("@Password", SqlDbType.VarChar).Value = password;
+
+            DataTable dtUsuarios = Dao.ConsultaInformacion("getUSUARIOSLOG", parametros);
+
+            if (dtUsuarios.Rows.Count > 0)
+            {
+                Usuarios.IdUsuario = Convert.ToInt32(dtUsuarios.Rows[0]["IdUsuario"]);
+                Usuarios.Usario = dtUsuarios.Rows[0]["Usario"].ToString();
+                Usuarios.Password = dtUsuarios.Rows[0]["Password"].ToString();
+            }
+
+            return Usuarios;
+        }
+
         internal List<Usuarios> GetUsuarios()
         {
             List<Usuarios> UsuariosList = new List<Usuarios>();

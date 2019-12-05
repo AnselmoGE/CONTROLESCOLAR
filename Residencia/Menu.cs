@@ -29,7 +29,7 @@ namespace Residencia
 
         private void btn_regAlumno_Click(object sender, EventArgs e)
         {
-            Form1 f = new Form1();
+            Alumnos f = new Alumnos();
             f.Show();
             Visible = false;
         }
