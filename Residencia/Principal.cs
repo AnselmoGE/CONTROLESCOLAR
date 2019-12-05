@@ -33,7 +33,7 @@ namespace Residencia
 
         private void carrerasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Carreras newMDIChild = new Carreras();
+            Carrera newMDIChild = new Carrera();
             newMDIChild.MdiParent = this;
             newMDIChild.Show();
         }
@@ -57,6 +57,11 @@ namespace Residencia
             Materias newMDIChild = new Materias();
             newMDIChild.MdiParent = this;
             newMDIChild.Show();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

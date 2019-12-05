@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarrerasBLL.cs" />
+    <Compile Include="CarrerasDAL.cs" />
     <Compile Include="MessageErrors.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuariosBLL.cs" />

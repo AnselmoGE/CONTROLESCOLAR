@@ -36,7 +36,7 @@ namespace Residencia
 
         private void btn_nomCarrera_Click(object sender, EventArgs e)
         {
-            Carreras f = new Carreras();
+            Carrera f = new Carrera();
             f.Show();
             Visible = false;
         }

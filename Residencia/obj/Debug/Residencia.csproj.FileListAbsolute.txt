@@ -42,7 +42,6 @@ C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Resid
 C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Residencia\obj\Debug\Residencia.pdb
 C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Residencia\obj\Debug\Residencia.csprojAssemblyReference.cache
 C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Residencia\obj\Debug\Residencia.Docente.resources
-C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Residencia\obj\Debug\Residencia.Carreras.resources
 C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Residencia\obj\Debug\Residencia.Alumnos.resources
 C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Residencia\obj\Debug\Residencia.Generar_Cargas.resources
 C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Residencia\obj\Debug\Residencia.Grupos.resources
@@ -63,3 +62,4 @@ C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Resid
 C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Residencia\bin\Debug\MODELS.pdb
 C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Residencia\bin\Debug\DAO.pdb
 C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Residencia\obj\Debug\Residencia.csproj.CopyComplete
+C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Residencia\obj\Debug\Residencia.Carrera.resources

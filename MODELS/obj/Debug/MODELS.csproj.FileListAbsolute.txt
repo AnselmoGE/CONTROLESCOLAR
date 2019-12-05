@@ -8,3 +8,4 @@ C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\MODEL
 C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\MODELS\obj\Debug\MODELS.csproj.CoreCompileInputs.cache
 C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\MODELS\obj\Debug\MODELS.dll
 C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\MODELS\obj\Debug\MODELS.pdb
+C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\MODELS\obj\Debug\MODELS.csprojAssemblyReference.cache
