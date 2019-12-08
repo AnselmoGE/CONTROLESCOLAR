@@ -37,6 +37,7 @@ namespace Residencia
             esNuevo = true;
             esEditar = false;
             HabilitaDesHabilitaLimpia(true);
+           
         }
 
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -44,6 +45,7 @@ namespace Residencia
             esNuevo = false;
             esEditar = true;
             HabilitaDesHabilitaLimpia(true);
+          
         }
 
 
@@ -117,6 +119,8 @@ namespace Residencia
             try { 
             if (e.RowIndex >= 0)
             {
+                    esEditar = true;
+                    esNuevo = false;
                 DataGridViewRow row = this.tabla_carreras.Rows[e.RowIndex];
                 txtID.Text = row.Cells["IdCarrera"].Value.ToString();
                 txtCarrera.Text = row.Cells["Nombre"].Value.ToString();
@@ -168,6 +172,7 @@ namespace Residencia
                 txtID.Text = "";
                 txtCarrera.Enabled = accion;
                 txtAbreviatura.Enabled = accion;
+                txtCarrera.Focus();
             }
             else if (esEditar)
             {
@@ -179,6 +184,7 @@ namespace Residencia
                 {
                     txtCarrera.Enabled = accion;
                     txtAbreviatura.Enabled = accion;
+                    txtCarrera.Focus();
                 }
             }
             else
@@ -188,6 +194,7 @@ namespace Residencia
                 txtID.Text = "";
                 txtCarrera.Enabled = accion;
                 txtAbreviatura.Enabled = accion;
+                txtCarrera.Focus();
             }
 
         }
@@ -197,6 +204,7 @@ namespace Residencia
             try { 
             BaseResponse<List<Carreras>> carreras = carreraBLL.GetCarrera();
             tabla_carreras.DataSource = carreras.Results;
+            this.tabla_carreras.Columns["IdCarrera"].Visible = false;
             }
             catch (Exception ex)
             {

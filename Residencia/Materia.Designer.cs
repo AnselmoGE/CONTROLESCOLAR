@@ -1,16 +1,16 @@
 ﻿namespace Residencia
 {
-    partial class Docente
+    partial class Materia
     {
         /// <summary>
-        /// Variable del diseñador necesaria.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Limpiar los recursos que se estén usando.
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,19 +20,19 @@
             base.Dispose(disposing);
         }
 
-        #region Código generado por el Diseñador de Windows Forms
+        #region Windows Form Designer generated code
 
         /// <summary>
-        /// Método necesario para admitir el Diseñador. No se puede modificar
-        /// el contenido de este método con el editor de código.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabla_docente = new System.Windows.Forms.DataGridView();
+            this.components = new System.ComponentModel.Container();
+            this.tabla_materias = new System.Windows.Forms.DataGridView();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.txtDocente = new System.Windows.Forms.TextBox();
+            this.txtMateria = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -44,26 +44,35 @@
             this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.tabla_docente)).BeginInit();
+            this.cmbDocente = new System.Windows.Forms.ComboBox();
+            this.docentesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dtpEntrada = new System.Windows.Forms.DateTimePicker();
+            this.dtpSalida = new System.Windows.Forms.DateTimePicker();
+            this.docentesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.tabla_materias)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.docentesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docentesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabla_docente
+            // tabla_materias
             // 
-            this.tabla_docente.AllowUserToAddRows = false;
-            this.tabla_docente.AllowUserToDeleteRows = false;
-            this.tabla_docente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tabla_docente.Location = new System.Drawing.Point(29, 144);
-            this.tabla_docente.Name = "tabla_docente";
-            this.tabla_docente.ReadOnly = true;
-            this.tabla_docente.Size = new System.Drawing.Size(662, 301);
-            this.tabla_docente.TabIndex = 5;
-            this.tabla_docente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_docente_CellClick);
+            this.tabla_materias.AllowUserToAddRows = false;
+            this.tabla_materias.AllowUserToDeleteRows = false;
+            this.tabla_materias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabla_materias.Location = new System.Drawing.Point(26, 164);
+            this.tabla_materias.Name = "tabla_materias";
+            this.tabla_materias.ReadOnly = true;
+            this.tabla_materias.Size = new System.Drawing.Size(630, 267);
+            this.tabla_materias.TabIndex = 11;
+            this.tabla_materias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_materias_CellClick);
             // 
             // txtID
             // 
             this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(183, 37);
+            this.txtID.Location = new System.Drawing.Point(134, 38);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(92, 20);
             this.txtID.TabIndex = 1;
@@ -72,50 +81,41 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 36);
+            this.label1.Location = new System.Drawing.Point(23, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 18);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "No. Docente:";
+            this.label1.Size = new System.Drawing.Size(93, 18);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "No. Materia:";
             // 
-            // txtTelefono
+            // txtMateria
             // 
-            this.txtTelefono.Enabled = false;
-            this.txtTelefono.Location = new System.Drawing.Point(183, 108);
-            this.txtTelefono.MaxLength = 10;
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(186, 20);
-            this.txtTelefono.TabIndex = 3;
-            // 
-            // txtDocente
-            // 
-            this.txtDocente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDocente.Enabled = false;
-            this.txtDocente.Location = new System.Drawing.Point(183, 76);
-            this.txtDocente.MaxLength = 100;
-            this.txtDocente.Name = "txtDocente";
-            this.txtDocente.Size = new System.Drawing.Size(186, 20);
-            this.txtDocente.TabIndex = 2;
+            this.txtMateria.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtMateria.Enabled = false;
+            this.txtMateria.Location = new System.Drawing.Point(134, 80);
+            this.txtMateria.MaxLength = 100;
+            this.txtMateria.Name = "txtMateria";
+            this.txtMateria.Size = new System.Drawing.Size(186, 20);
+            this.txtMateria.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(26, 110);
+            this.label3.Location = new System.Drawing.Point(370, 79);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 18);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Telefono:";
+            this.label3.Size = new System.Drawing.Size(71, 18);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Docente:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 75);
+            this.label2.Location = new System.Drawing.Point(23, 79);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 18);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Docente:";
+            this.label2.Size = new System.Drawing.Size(65, 18);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Materia:";
             // 
             // menuStrip1
             // 
@@ -124,7 +124,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(724, 24);
-            this.menuStrip1.TabIndex = 17;
+            this.menuStrip1.TabIndex = 23;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // archivoToolStripMenuItem
@@ -191,47 +191,117 @@
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // Docente
+            // cmbDocente
+            // 
+            this.cmbDocente.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.docentesBindingSource1, "Nombre", true));
+            this.cmbDocente.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.docentesBindingSource1, "IdDocente", true));
+            this.cmbDocente.Enabled = false;
+            this.cmbDocente.FormattingEnabled = true;
+            this.cmbDocente.Location = new System.Drawing.Point(470, 76);
+            this.cmbDocente.Name = "cmbDocente";
+            this.cmbDocente.Size = new System.Drawing.Size(186, 21);
+            this.cmbDocente.TabIndex = 3;
+            // 
+            // docentesBindingSource1
+            // 
+            this.docentesBindingSource1.DataSource = typeof(MODELS.Materias);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(370, 122);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(95, 18);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Hora Salida:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(23, 122);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(105, 18);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "Hora Entrada:";
+            // 
+            // dtpEntrada
+            // 
+            this.dtpEntrada.Enabled = false;
+            this.dtpEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpEntrada.Location = new System.Drawing.Point(134, 120);
+            this.dtpEntrada.Name = "dtpEntrada";
+            this.dtpEntrada.ShowUpDown = true;
+            this.dtpEntrada.Size = new System.Drawing.Size(114, 20);
+            this.dtpEntrada.TabIndex = 4;
+            // 
+            // dtpSalida
+            // 
+            this.dtpSalida.Enabled = false;
+            this.dtpSalida.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpSalida.Location = new System.Drawing.Point(470, 120);
+            this.dtpSalida.Name = "dtpSalida";
+            this.dtpSalida.ShowUpDown = true;
+            this.dtpSalida.Size = new System.Drawing.Size(115, 20);
+            this.dtpSalida.TabIndex = 5;
+            // 
+            // docentesBindingSource
+            // 
+            this.docentesBindingSource.DataSource = typeof(MODELS.Materias);
+            // 
+            // Materia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(724, 457);
+            this.Controls.Add(this.dtpSalida);
+            this.Controls.Add(this.dtpEntrada);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cmbDocente);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtTelefono);
-            this.Controls.Add(this.txtDocente);
+            this.Controls.Add(this.txtMateria);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.tabla_docente);
-            this.Name = "Docente";
-            this.Text = "Docentes";
-            ((System.ComponentModel.ISupportInitialize)(this.tabla_docente)).EndInit();
+            this.Controls.Add(this.tabla_materias);
+            this.Name = "Materia";
+            this.Text = "Materias";
+            ((System.ComponentModel.ISupportInitialize)(this.tabla_materias)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.docentesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docentesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView tabla_docente;
+        private System.Windows.Forms.DataGridView tabla_materias;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.TextBox txtDocente;
+        private System.Windows.Forms.TextBox txtMateria;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem guardarToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
+        private System.Windows.Forms.ComboBox cmbDocente;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker dtpEntrada;
+        private System.Windows.Forms.DateTimePicker dtpSalida;
+        private System.Windows.Forms.BindingSource docentesBindingSource1;
+        private System.Windows.Forms.BindingSource docentesBindingSource;
     }
 }
-

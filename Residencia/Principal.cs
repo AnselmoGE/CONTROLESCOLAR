@@ -19,7 +19,7 @@ namespace Residencia
 
         private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Alumnos newMDIChild = new Alumnos();
+            Alumno newMDIChild = new Alumno();
             newMDIChild.MdiParent = this;
             newMDIChild.Show();
         }
@@ -47,14 +47,14 @@ namespace Residencia
 
         private void gruposToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Grupos newMDIChild = new Grupos();
+            Grupo newMDIChild = new Grupo();
             newMDIChild.MdiParent = this;
             newMDIChild.Show();
         }
 
         private void materiasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Materias newMDIChild = new Materias();
+            Materia newMDIChild = new Materia();
             newMDIChild.MdiParent = this;
             newMDIChild.Show();
         }

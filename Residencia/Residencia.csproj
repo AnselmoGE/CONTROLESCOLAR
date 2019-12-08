@@ -60,11 +60,11 @@
       <DependentUpon>Carrera.cs</DependentUpon>
     </Compile>
     <Compile Include="Extensions.cs" />
-    <Compile Include="Alumnos.cs">
+    <Compile Include="Alumno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Alumnos.Designer.cs">
-      <DependentUpon>Alumnos.cs</DependentUpon>
+    <Compile Include="Alumno.Designer.cs">
+      <DependentUpon>Alumno.cs</DependentUpon>
     </Compile>
     <Compile Include="Generar Cargas.cs">
       <SubType>Form</SubType>
@@ -72,11 +72,11 @@
     <Compile Include="Generar Cargas.Designer.cs">
       <DependentUpon>Generar Cargas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grupos.cs">
+    <Compile Include="Grupo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Grupos.Designer.cs">
-      <DependentUpon>Grupos.cs</DependentUpon>
+    <Compile Include="Grupo.Designer.cs">
+      <DependentUpon>Grupo.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -84,11 +84,11 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Materias.cs">
+    <Compile Include="Materia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Materias.Designer.cs">
-      <DependentUpon>Materias.cs</DependentUpon>
+    <Compile Include="Materia.Designer.cs">
+      <DependentUpon>Materia.cs</DependentUpon>
     </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
@@ -104,20 +104,20 @@
     <EmbeddedResource Include="Carrera.resx">
       <DependentUpon>Carrera.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Alumnos.resx">
-      <DependentUpon>Alumnos.cs</DependentUpon>
+    <EmbeddedResource Include="Alumno.resx">
+      <DependentUpon>Alumno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Generar Cargas.resx">
       <DependentUpon>Generar Cargas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grupos.resx">
-      <DependentUpon>Grupos.cs</DependentUpon>
+    <EmbeddedResource Include="Grupo.resx">
+      <DependentUpon>Grupo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Materias.resx">
-      <DependentUpon>Materias.cs</DependentUpon>
+    <EmbeddedResource Include="Materia.resx">
+      <DependentUpon>Materia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -131,7 +131,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\MODELS.Alumnos.datasource" />
+    <None Include="Properties\DataSources\MODELS.BaseResponse.datasource" />
     <None Include="Properties\DataSources\MODELS.Carreras.datasource" />
+    <None Include="Properties\DataSources\MODELS.Docentes.datasource" />
+    <None Include="Properties\DataSources\MODELS.Grupos.datasource" />
+    <None Include="Properties\DataSources\MODELS.GruposMaterias.datasource" />
+    <None Include="Properties\DataSources\MODELS.Materias.datasource" />
+    <None Include="Properties\DataSources\MODELS.Usuarios.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

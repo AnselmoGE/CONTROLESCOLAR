@@ -10,6 +10,8 @@ namespace MODELS
 
         public string Nombre { get; set; }
 
+        public string NombreCarrera { get; set; }
+
         public int IdCarrera { get; set; }
 
     }

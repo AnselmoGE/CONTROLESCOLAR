@@ -10,8 +10,21 @@ namespace MODELS
 
         public int IdGrupo { get; set; }
 
+        public string NombreGrupo { get; set; }
+
         public int IdMateria { get; set; }
+
+        public string NombreMateria { get; set; }
+
+        public int IdDocente { get; set; }
+
+        public string NombreDocente { get; set; }
+
+        public TimeSpan HoraEntrada { get; set; }
+
+        public TimeSpan HoraSalida { get; set; }
 
     }
 
 }
+

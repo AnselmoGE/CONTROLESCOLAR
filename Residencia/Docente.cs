@@ -33,6 +33,7 @@ namespace Residencia
             esNuevo = true;
             esEditar = false;
             HabilitaDesHabilitaLimpia(true);
+           
         }
 
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -40,6 +41,7 @@ namespace Residencia
             esNuevo = false;
             esEditar = true;
             HabilitaDesHabilitaLimpia(true);
+           
         }
 
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -144,7 +146,9 @@ namespace Residencia
             try { 
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = this.tabla_docente.Rows[e.RowIndex];
+                    esEditar = true;
+                    esNuevo = false;
+                    DataGridViewRow row = this.tabla_docente.Rows[e.RowIndex];
                 txtID.Text = row.Cells["IdDocente"].Value.ToString();
                 txtDocente.Text = row.Cells["Nombre"].Value.ToString();
                 txtTelefono.Text = row.Cells["telefono"].Value.ToString();
@@ -169,6 +173,7 @@ namespace Residencia
                 txtID.Text = "";
                 txtDocente.Enabled = accion;
                 txtTelefono.Enabled = accion;
+                txtDocente.Focus();
             }
             else if (esEditar)
             {
@@ -180,6 +185,7 @@ namespace Residencia
                 {
                     txtDocente.Enabled = accion;
                     txtTelefono.Enabled = accion;
+                    txtDocente.Focus();
                 }
             }
             else
@@ -189,6 +195,7 @@ namespace Residencia
                 txtID.Text = "";
                 txtDocente.Enabled = accion;
                 txtTelefono.Enabled = accion;
+                txtDocente.Focus();
             }
 
         }
@@ -198,6 +205,7 @@ namespace Residencia
             try { 
             BaseResponse<List<Docentes>> docentes = docenteBLL.GetDocente();
             tabla_docente.DataSource = docentes.Results;
+            this.tabla_docente.Columns["IdDocente"].Visible = false;
             }
             catch (Exception ex)
             {

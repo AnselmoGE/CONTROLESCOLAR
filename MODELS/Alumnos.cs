@@ -19,7 +19,11 @@ namespace MODELS
 
         public int IdCarrera { get; set; }
 
+        public string NombreCarrera { get; set; }
+
         public int IdGrupo { get; set; }
+
+        public string NombreGrupo { get; set; }
 
     }
 }

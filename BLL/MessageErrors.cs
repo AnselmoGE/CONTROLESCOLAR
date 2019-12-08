@@ -22,7 +22,9 @@ namespace BLL
             {12, "Invalid credentials." },
             {13, "Inactive User." },
             {14, "Username does not exist." },       
-            {15, "Could not be deleted in the DB." }
+            {15, "Could not be deleted in the DB." },
+            {16, "La hora seleccionada ya se encuentra ocupada" },
+            {17, "La Materia Seleccionada ya se encuentra asignada al grupo" }
         };
 
         /// <summary>
