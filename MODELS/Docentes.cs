@@ -13,4 +13,15 @@ namespace MODELS
         public string telefono { get; set; }
 
     }
+
+    public class DocentesHorario
+    {
+        public string Asignatura { get; set; }
+
+        public string Docente { get; set; }
+
+        public string Horas { get; set; }
+
+
+    }
 }

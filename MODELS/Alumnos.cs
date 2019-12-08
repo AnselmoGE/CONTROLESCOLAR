@@ -34,4 +34,15 @@ namespace MODELS
         }
 
     }
+
+    public class AlumnosEncabezado
+    {
+
+        public string Nombre { get; set; }
+
+        public string Carrera { get; set; }
+
+        public string Grupo { get; set; }
+
+    }
 }

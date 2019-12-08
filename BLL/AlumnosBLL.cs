@@ -192,5 +192,76 @@ namespace BLL
             return response;
 
         }
+
+        //HORARIO
+
+        public BaseResponse<List<Horarios>> GetAlumnoHorario(int IdAlumno)
+        {
+            var response = new BaseResponse<List<Horarios>>();
+
+            try
+            {
+                response.Results = _AlumnosDAL.GetAlumnosHorario(IdAlumno);
+
+                if (response.Results != null)
+                    response.CodeError = 0;
+                else
+                {
+                    response.SetErrorCode(7);
+                }
+            }
+            catch
+            {
+                throw;
+            }
+
+            return response;
+        }
+
+        public BaseResponse<List<AlumnosEncabezado>> GetAlumnoEncabezado(int IdAlumno)
+        {
+            var response = new BaseResponse<List<AlumnosEncabezado>>();
+
+            try
+            {
+                response.Results = _AlumnosDAL.GetAlumnosEncabezado(IdAlumno);
+
+                if (response.Results != null)
+                    response.CodeError = 0;
+                else
+                {
+                    response.SetErrorCode(7);
+                }
+            }
+            catch
+            {
+                throw;
+            }
+
+            return response;
+        }
+
+        public BaseResponse<List<DocentesHorario>> GetMateriasDocenteEncabezado(int IdAlumno)
+        {
+            var response = new BaseResponse<List<DocentesHorario>>();
+
+            try
+            {
+                response.Results = _AlumnosDAL.GetMateriasDocenteEncabezado(IdAlumno);
+
+                if (response.Results != null)
+                    response.CodeError = 0;
+                else
+                {
+                    response.SetErrorCode(7);
+                }
+            }
+            catch
+            {
+                throw;
+            }
+
+            return response;
+        }
     }
 }

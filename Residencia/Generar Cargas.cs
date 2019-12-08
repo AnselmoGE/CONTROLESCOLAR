@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using MODELS;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.tool.xml;
 
 namespace Residencia
 {
@@ -26,7 +30,24 @@ namespace Residencia
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    
+                    DataGridViewRow row = this.tabla_alumnos.Rows[e.RowIndex];
+                    int idAlumno = Convert.ToInt32(row.Cells["IdAlumno"].Value.ToString());
 
+                    Horario newMDIChild = new Horario(idAlumno);
+                     newMDIChild.MdiParent = this.ParentForm ;
+                    newMDIChild.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " TRACE : " + ex.StackTrace);
+            }
+          
         }
 
         private void recargaGRID()
@@ -73,5 +94,46 @@ namespace Residencia
         {
             dt.DefaultView.RowFilter = $"NombreCompleto LIKE '{txtNombre.Text}%'";
         }
+
+        private void createPDF()
+        {
+            //This is the absolute path to the PDF that we will create
+            string outputFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Sample.pdf");
+
+            //Create a standard .Net FileStream for the file, setting various flags
+            using (FileStream fs = new FileStream(outputFile, FileMode.Create, FileAccess.Write, FileShare.None))
+            {
+                //Create a new PDF document setting the size to A4
+                using (Document doc = new Document(PageSize.A4))
+                {
+                    //Bind the PDF document to the FileStream using an iTextSharp PdfWriter
+                    using (PdfWriter w = PdfWriter.GetInstance(doc, fs))
+                    {
+                        //Open the document for writing
+                        doc.Open();
+
+                        //Create a table with two columns
+                        PdfPTable t = new PdfPTable(2);
+
+                        //Borders are drawn by the individual cells, not the table itself.
+                        //Tell the default cell that we do not want a border drawn
+                        t.DefaultCell.Border = 0;
+
+                        //Add four cells. Cells are added starting at the top left of the table working left to right first, then down
+                        t.AddCell("R1C1");
+                        t.AddCell("R1C2");
+                        t.AddCell("R2C1");
+                        t.AddCell("R2C2");
+
+                        //Add the table to our document
+                        doc.Add(t);
+
+                        //Close our document
+                        doc.Close();
+                    }
+                }
+            }
+        }
+        
     }
 }

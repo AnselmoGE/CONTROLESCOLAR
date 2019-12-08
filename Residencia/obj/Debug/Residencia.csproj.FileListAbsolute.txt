@@ -62,3 +62,7 @@ C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Resid
 C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Residencia\obj\Debug\Residencia.Materia.resources
 C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Residencia\obj\Debug\Residencia.Grupo.resources
 C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Residencia\obj\Debug\Residencia.Alumno.resources
+C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Residencia\bin\Debug\itextsharp.dll
+C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Residencia\bin\Debug\itextsharp.xml
+C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Residencia\bin\Debug\itextsharp.xmlworker.dll
+C:\Users\Eurouser\OneDrive - Europartners\Documents\GIT HUB\CONTROLESCOLAR\Residencia\obj\Debug\Residencia.Horario.resources

@@ -43,14 +43,14 @@
             this.tabla_alumnos.Location = new System.Drawing.Point(29, 78);
             this.tabla_alumnos.Name = "tabla_alumnos";
             this.tabla_alumnos.ReadOnly = true;
-            this.tabla_alumnos.Size = new System.Drawing.Size(597, 317);
+            this.tabla_alumnos.Size = new System.Drawing.Size(660, 354);
             this.tabla_alumnos.TabIndex = 0;
             this.tabla_alumnos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // txtNombre
             // 
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNombre.Location = new System.Drawing.Point(96, 30);
+            this.txtNombre.Location = new System.Drawing.Point(96, 40);
             this.txtNombre.MaxLength = 100;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(399, 20);
@@ -61,7 +61,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(26, 32);
+            this.label5.Location = new System.Drawing.Point(26, 42);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 18);
             this.label5.TabIndex = 40;

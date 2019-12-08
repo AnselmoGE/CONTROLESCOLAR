@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.13.1\lib\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -78,6 +84,12 @@
     <Compile Include="Grupo.Designer.cs">
       <DependentUpon>Grupo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Horario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Horario.Designer.cs">
+      <DependentUpon>Horario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +125,9 @@
     <EmbeddedResource Include="Grupo.resx">
       <DependentUpon>Grupo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Horario.resx">
+      <DependentUpon>Horario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +146,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\MODELS.Alumnos.datasource" />
     <None Include="Properties\DataSources\MODELS.BaseResponse.datasource" />
     <None Include="Properties\DataSources\MODELS.Carreras.datasource" />

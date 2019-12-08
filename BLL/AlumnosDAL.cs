@@ -116,6 +116,94 @@ namespace DAL
             return Dao.ActualizaInformacion("updateALUMNOS", parametros);
         }
 
-        
+        //HORARIO
+
+        internal List<Horarios> GetAlumnosHorario(int idAlumnos)
+        {
+            List<Horarios> AlumnosList = new List<Horarios>();
+
+
+            SqlCommand sqlCommand = new SqlCommand();
+            SqlParameterCollection parametros = sqlCommand.Parameters;
+            parametros.Add("@IdAlumno", SqlDbType.Int).Value = idAlumnos;
+
+            DataTable dtUsuario = Dao.ConsultaInformacion("getALUMNOSHORARIO", parametros);
+
+            if (dtUsuario.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dtUsuario.Rows)
+                {
+                    Horarios Horario = new Horarios();
+                    Horario.Hora = dr["Hora"].ToString();
+                    Horario.Lunes = dr["Lunes"].ToString();
+                    Horario.Martes = dr["Martes"].ToString();
+                    Horario.Miercoles = dr["Miercoles"].ToString();
+                    Horario.Jueves = dr["Juves"].ToString();
+                    Horario.Viernes = dr["Viernes"].ToString();
+                   
+
+                    AlumnosList.Add(Horario);
+                }
+            }
+
+            return AlumnosList;
+        }
+
+
+        internal List<AlumnosEncabezado> GetAlumnosEncabezado(int idAlumnos)
+        {
+            List<AlumnosEncabezado> AlumnosList = new List<AlumnosEncabezado>();
+
+
+            SqlCommand sqlCommand = new SqlCommand();
+            SqlParameterCollection parametros = sqlCommand.Parameters;
+            parametros.Add("@IdAlumno", SqlDbType.Int).Value = idAlumnos;
+
+            DataTable dtUsuario = Dao.ConsultaInformacion("getALUMNOSPDF", parametros);
+
+            if (dtUsuario.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dtUsuario.Rows)
+                {
+                    AlumnosEncabezado Alumno = new AlumnosEncabezado();
+                    Alumno.Nombre = dr["Nombre"].ToString();
+                    Alumno.Carrera = dr["NombreCarrera"].ToString();
+                    Alumno.Grupo = dr["NombreGrupo"].ToString();
+
+                    AlumnosList.Add(Alumno);
+                }
+            }
+
+            return AlumnosList;
+        }
+
+        internal List<DocentesHorario> GetMateriasDocenteEncabezado(int idAlumnos)
+        {
+            List<DocentesHorario> AlumnosList = new List<DocentesHorario>();
+
+
+            SqlCommand sqlCommand = new SqlCommand();
+            SqlParameterCollection parametros = sqlCommand.Parameters;
+            parametros.Add("@IdAlumno", SqlDbType.Int).Value = idAlumnos;
+
+            DataTable dtUsuario = Dao.ConsultaInformacion("getALUMNOSPROFESORHORARIO", parametros);
+
+            if (dtUsuario.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dtUsuario.Rows)
+                {
+                    DocentesHorario Docente = new DocentesHorario();
+                    Docente.Asignatura = dr["Asignatura"].ToString();
+                    Docente.Docente = dr["Docente"].ToString();
+                    Docente.Horas = dr["Horas"].ToString();
+
+                    AlumnosList.Add(Docente);
+                }
+            }
+
+            return AlumnosList;
+        }
+
+
     }
 }

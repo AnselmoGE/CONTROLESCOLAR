@@ -19,6 +19,7 @@ namespace Residencia
         CarrerasBLL carreraBLL;
         GruposBLL gruposBLL;
         AlumnosBLL alumnosBLL;
+        int IdAlumnoActual;
         public Alumno()
         {
             InitializeComponent();
@@ -27,6 +28,7 @@ namespace Residencia
             carreraBLL = new CarrerasBLL(Extensions.GetConnectionStringBD());
             gruposBLL = new GruposBLL(Extensions.GetConnectionStringBD());
             alumnosBLL = new AlumnosBLL(Extensions.GetConnectionStringBD());
+            IdAlumnoActual = 0;
             fillCombo();
             recargaGRID();
         }
@@ -121,6 +123,8 @@ namespace Residencia
                     currentAlumno.IdGrupo = Convert.ToInt32(cmbGrupo.SelectedValue);
 
                     BaseResponse<int> usuarios = alumnosBLL.InsertAlumno(currentAlumno);
+                    IdAlumnoActual = usuarios.Results;
+                    generaCarga();
                     esNuevo = false;
                     HabilitaDesHabilitaLimpia(false);
                     recargaGRID();
@@ -172,7 +176,7 @@ namespace Residencia
                     currentAlumno.telefono = txtTelefono.Text;
                     currentAlumno.IdCarrera = Convert.ToInt32(cmbCarrera.SelectedValue);
                     currentAlumno.IdGrupo = Convert.ToInt32(cmbGrupo.SelectedValue);
-
+                    IdAlumnoActual = currentAlumno.IdAlumno;
                     BaseResponse<int> usuarios = alumnosBLL.UpdateAlumno(currentAlumno);
                     esEditar = false;
                     HabilitaDesHabilitaLimpia(false);
@@ -193,7 +197,7 @@ namespace Residencia
 
         private void cargaAcademicaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            generaCarga();
         }
 
         private void tabla_alumnos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -212,7 +216,7 @@ namespace Residencia
                     txtApellidoMaterno.Text = row.Cells["ApellidoMaterno"].Value.ToString();
                     txtTelefono.Text = row.Cells["telefono"].Value.ToString();
                     cmbGrupo.SelectedValue = Convert.ToInt32(row.Cells["IdGrupo"].Value.ToString());
-                  
+                    IdAlumnoActual = Convert.ToInt32(row.Cells["IdAlumno"].Value.ToString());
 
                 }
             }
@@ -223,6 +227,21 @@ namespace Residencia
         }
 
         //FUNCIONES
+
+            private void generaCarga()
+        {
+            try
+            {
+                    Horario newMDIChild = new Horario(IdAlumnoActual);
+                    newMDIChild.MdiParent = this.ParentForm;
+                    newMDIChild.Show();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " TRACE : " + ex.StackTrace);
+            }
+        }
 
         public void HabilitaDesHabilitaLimpia(bool accion)
         {
