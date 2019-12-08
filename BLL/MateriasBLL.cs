@@ -95,7 +95,7 @@ namespace BLL
         {
             var response = new BaseResponse<int>();
 
-            List<Materias> horario = _MateriaDAL.GetMateriasHoras(materia.IdDocente);
+            List<Materias> horario = _MateriaDAL.GetMateriasHoras(materia.IdDocente,materia.IdDia);
 
             if (horario.Count > 0)
             {
@@ -154,7 +154,7 @@ namespace BLL
             var response = new BaseResponse<int>();
             bool desconecta = false;
 
-            List<Materias> horario = _MateriaDAL.GetMateriasHoras(materia.IdDocente);
+            List<Materias> horario = _MateriaDAL.GetMateriasHoras(materia.IdDocente,materia.IdDia);
 
             if (horario.Count > 0)
             {
@@ -249,6 +249,31 @@ namespace BLL
             }
             return response;
 
+        }
+
+        //DIAS
+
+        public BaseResponse<List<Materias>> GetDias()
+        {
+            var response = new BaseResponse<List<Materias>>();
+
+            try
+            {
+                response.Results = _MateriaDAL.GetDias();
+
+                if (response.Results != null)
+                    response.CodeError = 0;
+                else
+                {
+                    response.SetErrorCode(7);
+                }
+            }
+            catch
+            {
+                throw;
+            }
+
+            return response;
         }
     }
 }

@@ -16,13 +16,18 @@ namespace MODELS
 
         public string NombreMateria { get; set; }
 
-        public int IdDocente { get; set; }
+        public int IdDia { get; set; }
 
-        public string NombreDocente { get; set; }
+        public string NombreDia { get; set; }
 
         public TimeSpan HoraEntrada { get; set; }
 
         public TimeSpan HoraSalida { get; set; }
+
+        public int IdDocente { get; set; }
+
+        public string NombreDocente { get; set; }
+
 
     }
 

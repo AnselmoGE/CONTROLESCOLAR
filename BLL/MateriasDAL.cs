@@ -26,6 +26,7 @@ namespace DAL
             parametros.Add("@IdDocente", SqlDbType.Int).Value = materias.IdDocente;
             parametros.Add("@HoraEntrada", SqlDbType.Time).Value = materias.HoraEntrada;
             parametros.Add("@HoraSalida", SqlDbType.Time).Value = materias.HoraSalida;
+            parametros.Add("@IdDia", SqlDbType.Int).Value = materias.IdDia;
             return Dao.InsertaInformacion("insertMATERIAS", parametros);
         }
 
@@ -47,6 +48,8 @@ namespace DAL
                 Materias.IdDocente = Convert.ToInt32(dtMaterias.Rows[0]["IdDocente"].ToString());
                 Materias.HoraEntrada = Convert.ToDateTime(dtMaterias.Rows[0]["HoraEntrada"].ToString()).TimeOfDay;
                 Materias.HoraSalida = Convert.ToDateTime(dtMaterias.Rows[0]["HoraSalida"].ToString()).TimeOfDay;
+                Materias.NombreDia = dtMaterias.Rows[0]["NombreDia"].ToString();
+                Materias.IdDia = Convert.ToInt32(dtMaterias.Rows[0]["IdDia"].ToString());
             }
 
             return Materias;
@@ -74,6 +77,8 @@ namespace DAL
                     Materias.IdDocente = Convert.ToInt32(dr["IdDocente"].ToString());
                     Materias.HoraEntrada = Convert.ToDateTime(dr["HoraEntrada"].ToString()).TimeOfDay;
                     Materias.HoraSalida = Convert.ToDateTime(dr["HoraSalida"].ToString()).TimeOfDay;
+                    Materias.NombreDia = dr["NombreDia"].ToString();
+                    Materias.IdDia = Convert.ToInt32(dr["IdDia"].ToString());
 
                     MateriasList.Add(Materias);
                 }
@@ -82,7 +87,7 @@ namespace DAL
             return MateriasList;
         }
 
-        internal List<Materias> GetMateriasHoras(int idDocente)
+        internal List<Materias> GetMateriasHoras(int idDocente, int IdDia)
         {
             List<Materias> MateriasList = new List<Materias>();
 
@@ -90,6 +95,7 @@ namespace DAL
             SqlCommand sqlCommand = new SqlCommand();
             SqlParameterCollection parametros = sqlCommand.Parameters;
             parametros.Add("@IdDocente", SqlDbType.Int).Value = idDocente;
+            parametros.Add("@IdDia", SqlDbType.Int).Value = IdDia;
 
             DataTable dtUsuario = Dao.ConsultaInformacion("getMATERIASHORA", parametros);
 
@@ -132,10 +138,37 @@ namespace DAL
             parametros.Add("@IdDocente", SqlDbType.Int).Value = materias.IdDocente;
             parametros.Add("@HoraEntrada", SqlDbType.Time).Value = materias.HoraEntrada;
             parametros.Add("@HoraSalida", SqlDbType.Time).Value = materias.HoraSalida;
+            parametros.Add("@IdDia", SqlDbType.Int).Value = materias.IdDia;
 
             return Dao.ActualizaInformacion("updateMATERIAS", parametros);
         }
 
-        
+        //dias
+        internal List<Materias> GetDias()
+        {
+            List<Materias> MateriasList = new List<Materias>();
+
+
+            SqlCommand sqlCommand = new SqlCommand();
+            SqlParameterCollection parametros = sqlCommand.Parameters;
+
+            DataTable dtUsuario = Dao.ConsultaInformacion("getDIAS", parametros);
+
+            if (dtUsuario.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dtUsuario.Rows)
+                {
+                    Materias Materias = new Materias();
+                    Materias.IdDia = Convert.ToInt32(dr["IdDias"]);
+                    Materias.NombreDia = dr["Nombre"].ToString();
+
+                    MateriasList.Add(Materias);
+                }
+            }
+
+            return MateriasList;
+        }
+
+
     }
 }

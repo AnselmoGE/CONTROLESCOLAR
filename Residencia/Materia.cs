@@ -60,7 +60,10 @@ namespace Residencia
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + " TRACE : " + ex.StackTrace);
+                if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+                    MessageBox.Show("El registro se encuentra asignado y no se puede eliminar");
+                else
+                    MessageBox.Show(ex.Message + " TRACE : " + ex.StackTrace);
             }
         }
 
@@ -94,6 +97,7 @@ namespace Residencia
                     currentMateria.IdDocente = Convert.ToInt32(cmbDocente.SelectedValue);
                     currentMateria.HoraEntrada = dtpEntrada.Value.TimeOfDay;
                     currentMateria.HoraSalida = dtpSalida.Value.TimeOfDay;
+                    currentMateria.IdDia = Convert.ToInt32(cmbDia.SelectedValue);
 
                     BaseResponse<int> usuarios = materiasBLL.InsertMateria(currentMateria);
 
@@ -132,8 +136,9 @@ namespace Residencia
                     currentMateria.IdDocente = Convert.ToInt32(cmbDocente.SelectedValue);
                     currentMateria.HoraEntrada = dtpEntrada.Value.TimeOfDay;
                     currentMateria.HoraSalida = dtpSalida.Value.TimeOfDay;
+                    currentMateria.IdDia = Convert.ToInt32(cmbDia.SelectedValue);
 
-                     BaseResponse<int> usuarios = materiasBLL.UpdateMateria(currentMateria);
+                    BaseResponse<int> usuarios = materiasBLL.UpdateMateria(currentMateria);
 
                     if (usuarios.CodeError > 0)
                     {
@@ -172,6 +177,7 @@ namespace Residencia
                     cmbDocente.SelectedValue = Convert.ToInt32(row.Cells["IdDocente"].Value.ToString());
                     dtpEntrada.Text = row.Cells["HoraEntrada"].Value.ToString();
                     dtpSalida.Text = row.Cells["HoraSalida"].Value.ToString();
+                    cmbDia.SelectedValue = Convert.ToInt32(row.Cells["IdDia"].Value.ToString());
 
                 }
             }
@@ -190,6 +196,7 @@ namespace Residencia
             {
                 txtMateria.Text = "";
                 cmbDocente.Text = "";
+                cmbDia.Text = "";
                 txtID.Text = "";
                 dtpEntrada.Value = DateTime.Today;
                 dtpSalida.Value = DateTime.Today;
@@ -197,6 +204,7 @@ namespace Residencia
                 cmbDocente.Enabled = accion;
                 dtpEntrada.Enabled = accion;
                 dtpSalida.Enabled = accion;
+                cmbDia.Enabled = accion;
                 txtMateria.Focus();
             }
             else if (esEditar)
@@ -211,6 +219,7 @@ namespace Residencia
                     cmbDocente.Enabled = accion;
                     dtpEntrada.Enabled = accion;
                     dtpSalida.Enabled = accion;
+                    cmbDia.Enabled = accion;
                     txtMateria.Focus();
                 }
             }
@@ -219,12 +228,14 @@ namespace Residencia
                 txtMateria.Text = "";
                 cmbDocente.Text = "";
                 txtID.Text = "";
+                cmbDia.Text = "";
                 dtpEntrada.Value = DateTime.Today;
                 dtpSalida.Value = DateTime.Today;
                 txtMateria.Enabled = accion;
                 cmbDocente.Enabled = accion;
                 dtpEntrada.Enabled = accion;
                 dtpSalida.Enabled = accion;
+                cmbDia.Enabled = accion;
                 txtMateria.Focus();
             }
 
@@ -238,6 +249,7 @@ namespace Residencia
                 tabla_materias.DataSource = docentes.Results;
                 this.tabla_materias.Columns["IdDocente"].Visible = false; 
                 this.tabla_materias.Columns["IdMateria"].Visible = false;
+                this.tabla_materias.Columns["IdDia"].Visible = false;
                 this.tabla_materias.Columns["NombreMateriaCustom"].Visible = false;
             }
             catch (Exception ex)
@@ -257,6 +269,15 @@ namespace Residencia
                 cmbDocente.DisplayMember = "Nombre";
 
                 cmbDocente.SelectedValue = "valuemember value";
+
+
+                BaseResponse<List<Materias>> dias = materiasBLL.GetDias();
+                cmbDia.DataSource = dias.Results;
+
+                cmbDia.ValueMember = "IdDia";
+                cmbDia.DisplayMember = "NombreDia";
+
+                cmbDia.SelectedValue = "valuemember value";
             }
             catch (Exception ex)
             {

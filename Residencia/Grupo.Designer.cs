@@ -47,13 +47,13 @@
             this.cmbCarrera = new System.Windows.Forms.ComboBox();
             this.tabla_grupos = new System.Windows.Forms.DataGridView();
             this.tbpGrupoMateria = new System.Windows.Forms.TabPage();
+            this.txtGMID = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.cmbGrupo = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.cmbMateria = new System.Windows.Forms.ComboBox();
             this.tabla_materiasgrupo = new System.Windows.Forms.DataGridView();
-            this.txtGMID = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tbpGrupo.SuspendLayout();
@@ -90,7 +90,7 @@
             // 
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
             this.nuevoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
@@ -98,7 +98,7 @@
             // 
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
             this.eliminarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
@@ -106,33 +106,33 @@
             // 
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
             this.editarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editarToolStripMenuItem.Text = "Editar";
             this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(155, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // guardarToolStripMenuItem
             // 
             this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
             this.guardarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.guardarToolStripMenuItem.Text = "Guardar";
             this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(155, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -228,6 +228,7 @@
             // 
             this.tabla_grupos.AllowUserToAddRows = false;
             this.tabla_grupos.AllowUserToDeleteRows = false;
+            this.tabla_grupos.AllowUserToOrderColumns = true;
             this.tabla_grupos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabla_grupos.Location = new System.Drawing.Point(6, 102);
             this.tabla_grupos.Name = "tabla_grupos";
@@ -252,6 +253,24 @@
             this.tbpGrupoMateria.TabIndex = 1;
             this.tbpGrupoMateria.Text = "Grupos-Materias";
             this.tbpGrupoMateria.UseVisualStyleBackColor = true;
+            // 
+            // txtGMID
+            // 
+            this.txtGMID.Enabled = false;
+            this.txtGMID.Location = new System.Drawing.Point(83, 67);
+            this.txtGMID.Name = "txtGMID";
+            this.txtGMID.Size = new System.Drawing.Size(92, 20);
+            this.txtGMID.TabIndex = 41;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(22, 67);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 18);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "No. :";
             // 
             // cmbGrupo
             // 
@@ -302,24 +321,6 @@
             this.tabla_materiasgrupo.Size = new System.Drawing.Size(679, 268);
             this.tabla_materiasgrupo.TabIndex = 34;
             this.tabla_materiasgrupo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_materiasgrupo_CellClick);
-            // 
-            // txtGMID
-            // 
-            this.txtGMID.Enabled = false;
-            this.txtGMID.Location = new System.Drawing.Point(83, 67);
-            this.txtGMID.Name = "txtGMID";
-            this.txtGMID.Size = new System.Drawing.Size(92, 20);
-            this.txtGMID.TabIndex = 41;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(22, 67);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 18);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "No. :";
             // 
             // Grupo
             // 

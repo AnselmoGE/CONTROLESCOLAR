@@ -25,5 +25,13 @@ namespace MODELS
 
         public string NombreGrupo { get; set; }
 
+        public string NombreCompleto
+        {
+            get
+            {
+                return Nombre + " " + ApellidoPaterno + " " + ApellidoMaterno;
+            }
+        }
+
     }
 }

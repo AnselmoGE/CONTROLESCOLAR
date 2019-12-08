@@ -102,6 +102,8 @@ namespace DAL
                     Grupos.NombreDocente =dr["NombreDocente"].ToString();
                     Grupos.HoraEntrada = Convert.ToDateTime(dr["HoraEntrada"].ToString()).TimeOfDay;
                     Grupos.HoraSalida = Convert.ToDateTime(dr["HoraSalida"].ToString()).TimeOfDay;
+                    Grupos.IdDia = Convert.ToInt32(dr["IdDia"].ToString());
+                    Grupos.NombreDia = dr["NombreDia"].ToString();
 
                     GruposList.Add(Grupos);
                 }

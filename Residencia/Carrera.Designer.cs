@@ -100,6 +100,7 @@
             // 
             this.tabla_carreras.AllowUserToAddRows = false;
             this.tabla_carreras.AllowUserToDeleteRows = false;
+            this.tabla_carreras.AllowUserToOrderColumns = true;
             this.tabla_carreras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabla_carreras.Location = new System.Drawing.Point(15, 161);
             this.tabla_carreras.Name = "tabla_carreras";

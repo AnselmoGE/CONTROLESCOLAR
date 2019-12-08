@@ -10,19 +10,23 @@ namespace MODELS
 
         public string Nombre { get; set; }
 
-        public string NombreDocente { get; set; }
+        public string NombreDia { get; set; }
 
-        public int IdDocente { get; set; }
+        public int IdDia { get; set; }
 
         public TimeSpan HoraEntrada { get; set; }
 
         public TimeSpan HoraSalida { get; set; }
 
+        public string NombreDocente { get; set; }
+
+        public int IdDocente { get; set; }
+
         public string NombreMateriaCustom
         {
             get
             {
-                return Nombre + " - " + HoraEntrada + " - " + HoraSalida + " " + NombreDocente;
+                return NombreDia + " - " + HoraEntrada + " - " + HoraSalida + "  "  + Nombre + "  ( " + NombreDocente + "  )";
             }
         }
 

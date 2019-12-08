@@ -62,6 +62,7 @@
             // 
             this.tabla_alumnos.AllowUserToAddRows = false;
             this.tabla_alumnos.AllowUserToDeleteRows = false;
+            this.tabla_alumnos.AllowUserToOrderColumns = true;
             this.tabla_alumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabla_alumnos.Location = new System.Drawing.Point(15, 195);
             this.tabla_alumnos.Name = "tabla_alumnos";

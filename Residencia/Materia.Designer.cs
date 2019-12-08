@@ -45,11 +45,13 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmbDocente = new System.Windows.Forms.ComboBox();
-            this.docentesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dtpEntrada = new System.Windows.Forms.DateTimePicker();
             this.dtpSalida = new System.Windows.Forms.DateTimePicker();
+            this.cmbDia = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.docentesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.docentesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tabla_materias)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -61,11 +63,12 @@
             // 
             this.tabla_materias.AllowUserToAddRows = false;
             this.tabla_materias.AllowUserToDeleteRows = false;
+            this.tabla_materias.AllowUserToOrderColumns = true;
             this.tabla_materias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tabla_materias.Location = new System.Drawing.Point(26, 164);
+            this.tabla_materias.Location = new System.Drawing.Point(26, 204);
             this.tabla_materias.Name = "tabla_materias";
             this.tabla_materias.ReadOnly = true;
-            this.tabla_materias.Size = new System.Drawing.Size(630, 267);
+            this.tabla_materias.Size = new System.Drawing.Size(630, 185);
             this.tabla_materias.TabIndex = 11;
             this.tabla_materias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_materias_CellClick);
             // 
@@ -94,14 +97,14 @@
             this.txtMateria.Location = new System.Drawing.Point(134, 80);
             this.txtMateria.MaxLength = 100;
             this.txtMateria.Name = "txtMateria";
-            this.txtMateria.Size = new System.Drawing.Size(186, 20);
+            this.txtMateria.Size = new System.Drawing.Size(203, 20);
             this.txtMateria.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(370, 79);
+            this.label3.Location = new System.Drawing.Point(359, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 18);
             this.label3.TabIndex = 21;
@@ -145,7 +148,7 @@
             // 
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
             this.nuevoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
@@ -153,7 +156,7 @@
             // 
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
             this.eliminarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
@@ -161,33 +164,33 @@
             // 
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
             this.editarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.editarToolStripMenuItem.Text = "Editar";
             this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(155, 6);
             // 
             // guardarToolStripMenuItem
             // 
             this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
             this.guardarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.guardarToolStripMenuItem.Text = "Guardar";
             this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(155, 6);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -197,20 +200,16 @@
             this.cmbDocente.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.docentesBindingSource1, "IdDocente", true));
             this.cmbDocente.Enabled = false;
             this.cmbDocente.FormattingEnabled = true;
-            this.cmbDocente.Location = new System.Drawing.Point(470, 76);
+            this.cmbDocente.Location = new System.Drawing.Point(470, 80);
             this.cmbDocente.Name = "cmbDocente";
             this.cmbDocente.Size = new System.Drawing.Size(186, 21);
             this.cmbDocente.TabIndex = 3;
-            // 
-            // docentesBindingSource1
-            // 
-            this.docentesBindingSource1.DataSource = typeof(MODELS.Materias);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(370, 122);
+            this.label4.Location = new System.Drawing.Point(23, 158);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 18);
             this.label4.TabIndex = 25;
@@ -220,7 +219,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 122);
+            this.label5.Location = new System.Drawing.Point(359, 122);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(105, 18);
             this.label5.TabIndex = 27;
@@ -230,21 +229,46 @@
             // 
             this.dtpEntrada.Enabled = false;
             this.dtpEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpEntrada.Location = new System.Drawing.Point(134, 120);
+            this.dtpEntrada.Location = new System.Drawing.Point(470, 122);
             this.dtpEntrada.Name = "dtpEntrada";
             this.dtpEntrada.ShowUpDown = true;
-            this.dtpEntrada.Size = new System.Drawing.Size(114, 20);
-            this.dtpEntrada.TabIndex = 4;
+            this.dtpEntrada.Size = new System.Drawing.Size(142, 20);
+            this.dtpEntrada.TabIndex = 5;
             // 
             // dtpSalida
             // 
             this.dtpSalida.Enabled = false;
             this.dtpSalida.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpSalida.Location = new System.Drawing.Point(470, 120);
+            this.dtpSalida.Location = new System.Drawing.Point(134, 158);
             this.dtpSalida.Name = "dtpSalida";
             this.dtpSalida.ShowUpDown = true;
-            this.dtpSalida.Size = new System.Drawing.Size(115, 20);
-            this.dtpSalida.TabIndex = 5;
+            this.dtpSalida.Size = new System.Drawing.Size(142, 20);
+            this.dtpSalida.TabIndex = 6;
+            // 
+            // cmbDia
+            // 
+            this.cmbDia.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.docentesBindingSource1, "Nombre", true));
+            this.cmbDia.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.docentesBindingSource1, "IdDocente", true));
+            this.cmbDia.Enabled = false;
+            this.cmbDia.FormattingEnabled = true;
+            this.cmbDia.Location = new System.Drawing.Point(134, 119);
+            this.cmbDia.Name = "cmbDia";
+            this.cmbDia.Size = new System.Drawing.Size(203, 21);
+            this.cmbDia.TabIndex = 4;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(23, 122);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(36, 18);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Día:";
+            // 
+            // docentesBindingSource1
+            // 
+            this.docentesBindingSource1.DataSource = typeof(MODELS.Materias);
             // 
             // docentesBindingSource
             // 
@@ -256,6 +280,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(724, 457);
+            this.Controls.Add(this.cmbDia);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.dtpSalida);
             this.Controls.Add(this.dtpEntrada);
             this.Controls.Add(this.label5);
@@ -303,5 +329,7 @@
         private System.Windows.Forms.DateTimePicker dtpSalida;
         private System.Windows.Forms.BindingSource docentesBindingSource1;
         private System.Windows.Forms.BindingSource docentesBindingSource;
+        private System.Windows.Forms.ComboBox cmbDia;
+        private System.Windows.Forms.Label label6;
     }
 }

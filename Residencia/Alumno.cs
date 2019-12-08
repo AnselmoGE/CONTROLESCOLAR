@@ -60,7 +60,10 @@ namespace Residencia
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + " TRACE : " + ex.StackTrace);
+                if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+                    MessageBox.Show("El registro se encuentra asignado y no se puede eliminar");
+                else
+                    MessageBox.Show(ex.Message + " TRACE : " + ex.StackTrace);
             }
         }
 
@@ -287,6 +290,7 @@ namespace Residencia
                 this.tabla_alumnos.Columns["IdAlumno"].Visible = false;
                 this.tabla_alumnos.Columns["IdCarrera"].Visible = false;
                 this.tabla_alumnos.Columns["IdGrupo"].Visible = false;
+                this.tabla_alumnos.Columns["NombreCompleto"].Visible = false;
             }
             catch (Exception ex)
             {

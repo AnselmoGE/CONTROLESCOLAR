@@ -8,12 +8,15 @@ namespace BLL
     public class GruposBLL
     {
         private readonly GruposDAL _GrupoDAL;
+        private readonly MateriasDAL _MateriaDAL;
+
         private string stringConnection;
 
         public GruposBLL(string stringConnection)
         {
             this.stringConnection = stringConnection;
             _GrupoDAL = new GruposDAL(this.stringConnection);
+            _MateriaDAL = new MateriasDAL(this.stringConnection);
         }
 
 
@@ -228,6 +231,24 @@ namespace BLL
                 return response;
             }
 
+            List<GruposMaterias> materiasList = _GrupoDAL.GetMateriasGrupos(Grupo.IdGrupo);
+            Materias currentMateria = _MateriaDAL.GetMaterias(Grupo.IdMateria);
+
+            if (materiasList.Count > 0)
+            {
+                foreach (GruposMaterias materia in materiasList)
+                {
+                    if (currentMateria.IdDia == materia.IdDia && materia.HoraEntrada >= currentMateria.HoraEntrada && materia.HoraSalida <= currentMateria.HoraSalida && materia.IdMateria != currentMateria.IdMateria ||
+                 currentMateria.IdDia == materia.IdDia &&  materia.HoraEntrada >= currentMateria.HoraEntrada && materia.HoraEntrada <= currentMateria.HoraSalida && materia.IdMateria != currentMateria.IdMateria)
+                    {
+                        response.SetErrorCode(16);
+                        response.MessageError += " en el horario : " + currentMateria.HoraEntrada + " - " + currentMateria.HoraSalida;
+                        return response;
+                    }
+                }
+            }
+
+
             bool desconecta = false;
             try
             {
@@ -277,6 +298,22 @@ namespace BLL
                 return response;
             }
 
+            List<GruposMaterias> materiasList = _GrupoDAL.GetMateriasGrupos(Grupo.IdGrupo);
+            Materias currentMateria = _MateriaDAL.GetMaterias(Grupo.IdMateria);
+
+            if (materiasList.Count > 0)
+            {
+                foreach (GruposMaterias materia in materiasList)
+                {
+                    if (currentMateria.IdDia == materia.IdDia && materia.HoraEntrada >= currentMateria.HoraEntrada && materia.HoraSalida <= currentMateria.HoraSalida ||
+                 currentMateria.IdDia == materia.IdDia &&  materia.HoraEntrada >= currentMateria.HoraEntrada && materia.HoraEntrada <= currentMateria.HoraSalida)
+                    {
+                        response.SetErrorCode(16);
+                        response.MessageError += " en el horario : " + currentMateria.HoraEntrada + " - " + currentMateria.HoraSalida;
+                        return response;
+                    }
+                }
+            }
 
             bool desconecta = false;
 
