@@ -248,6 +248,22 @@ namespace BLL
                 }
             }
 
+            List<GruposMaterias> horario = _GrupoDAL.GetMateriasByDocente(currentMateria.IdDocente);
+
+            if (horario.Count > 0)
+            {
+                foreach (GruposMaterias hora in horario)
+                {
+                    if (currentMateria.HoraEntrada >= hora.HoraEntrada && currentMateria.HoraSalida <= hora.HoraSalida && currentMateria.IdMateria != hora.IdMateria ||
+                   currentMateria.HoraEntrada >= hora.HoraEntrada && currentMateria.HoraEntrada <= hora.HoraSalida && currentMateria.IdMateria != hora.IdMateria)
+                    {
+                        response.SetErrorCode(16);
+                        response.MessageError += " en el horario : " + hora.HoraEntrada + " - " + hora.HoraSalida;
+                        return response;
+                    }
+                }
+            }
+
 
             bool desconecta = false;
             try
@@ -310,6 +326,22 @@ namespace BLL
                     {
                         response.SetErrorCode(16);
                         response.MessageError += " en el horario : " + currentMateria.HoraEntrada + " - " + currentMateria.HoraSalida;
+                        return response;
+                    }
+                }
+            }
+
+            List<GruposMaterias> horario = _GrupoDAL.GetMateriasByDocente(currentMateria.IdDocente);
+
+            if (horario.Count > 0)
+            {
+                foreach (GruposMaterias hora in horario)
+                {
+                    if (currentMateria.HoraEntrada >= hora.HoraEntrada && currentMateria.HoraSalida <= hora.HoraSalida  ||
+                   currentMateria.HoraEntrada >= hora.HoraEntrada && currentMateria.HoraEntrada <= hora.HoraSalida )
+                    {
+                        response.SetErrorCode(16);
+                        response.MessageError += " en el horario : " + hora.HoraEntrada + " - " + hora.HoraSalida;
                         return response;
                     }
                 }

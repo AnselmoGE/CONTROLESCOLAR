@@ -210,5 +210,40 @@ namespace DAL
             return GruposList;
         }
 
+        internal List<GruposMaterias> GetMateriasByDocente(int idDocente)
+        {
+            List<GruposMaterias> GruposList = new List<GruposMaterias>();
+
+
+            SqlCommand sqlCommand = new SqlCommand();
+            SqlParameterCollection parametros = sqlCommand.Parameters;
+            parametros.Add("@IdDocente", SqlDbType.Int).Value = idDocente;
+
+            DataTable dtUsuario = Dao.ConsultaInformacion("getMATERIASBYDOCENTE", parametros);
+
+            if (dtUsuario.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dtUsuario.Rows)
+                {
+                    GruposMaterias Grupos = new GruposMaterias();
+                    Grupos.IdGrupoMateria = Convert.ToInt32(dr["IdGrupoMateria"]);
+                    Grupos.NombreGrupo = dr["NombreGrupo"].ToString();
+                    Grupos.NombreMateria = dr["NombreMateria"].ToString();
+                    Grupos.IdGrupo = Convert.ToInt32(dr["IdGrupo"].ToString());
+                    Grupos.IdMateria = Convert.ToInt32(dr["IdMateria"].ToString());
+                    Grupos.IdDocente = Convert.ToInt32(dr["IdDocente"].ToString());
+                    Grupos.NombreDocente = dr["NombreDocente"].ToString();
+                    Grupos.HoraEntrada = Convert.ToDateTime(dr["HoraEntrada"].ToString()).TimeOfDay;
+                    Grupos.HoraSalida = Convert.ToDateTime(dr["HoraSalida"].ToString()).TimeOfDay;
+                    Grupos.IdDia = Convert.ToInt32(dr["IdDia"].ToString());
+                    Grupos.NombreDia = dr["NombreDia"].ToString();
+
+                    GruposList.Add(Grupos);
+                }
+            }
+
+            return GruposList;
+        }
+
     }
 }
